@@ -1,4 +1,4 @@
-![TMO Kashmir Logo](https://github.com/tmokashmir/tmo_kashmir/blob/7ed16d3d88a68da911c130a6236380059752cae5/logo.png?raw=true)
+![TMO Kashmir Logo](https://github.com/tmokashmir/tmo_kashmir/blob/2dab6356a3bc196a0dae974cf0d5a1693187e519/logo.png)
 # Top Models of Kashmir - Official Website
 
 Welcome to the official website of **Top Models of Kashmir** (@tmo_kashmir), a platform that showcases the finest models from Kashmir and offers collaboration opportunities for photographers, brands, and influencers.
