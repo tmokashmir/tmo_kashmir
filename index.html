@@ -48,24 +48,43 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <p>If you're interested in collaborating with us, fill out the form below or reach us via Instagram: <a href="https://www.instagram.com/tmo_kashmir" target="_blank">@tmo_kashmir</a></p>
-        <form action="submit_form.php" method="POST">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required><br>
-            
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required><br>
-            
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+        <!DOCTYPE html>
+        <!-- Load EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      // Initialize EmailJS with your Public Key
+      emailjs.init("T3O-8nLfJ4i8CNFOw"); // Replace with your EmailJS Public Key
+    })();
 
-    <footer>
-        <p>Follow us on Instagram: <a href="https://www.instagram.com/tmo_kashmir" target="_blank">@tmo_kashmir</a></p>
-    </footer>
+    // Function to send email when the form is submitted
+    function sendEmail(event) {
+      event.preventDefault(); // Prevent form from refreshing the page
+      emailjs
+        .sendForm('service_1v9i3os', 'template_f9p7teg', event.target) // Replace YOUR_SERVICE_ID with your actual Service ID
+        .then(() => {
+          alert("Message sent successfully!");
+        })
+        .catch(() => {
+          alert("Failed to send the message. Please try again.");
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Contact Us</h1>
+  <!-- Contact Form -->
+  <form onsubmit="sendEmail(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-    <script src="script.js"></script>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
