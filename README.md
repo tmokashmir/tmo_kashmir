@@ -21,17 +21,19 @@ Welcome to the official website of **Top Models of Kashmir** (@tmo_kashmir), a p
 If you're a model, photographer, or brand interested in collaborating with us, you can:
 
 1. **Fill out the contact form** on the website.
-2.  ## Contact Us
+2. ## Contact Form
+3. <form action="https://getform.io/f/bqoodkdb" method="POST" style="display:flex; flex-direction:column; max-width:400px;">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required style="margin-bottom:10px; padding:5px;">
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required style="margin-bottom:10px; padding:5px;">
 
-You can fill out the form below and send us your details:
-
-| Field           | Input                 |
-|------------------|-----------------------|
-| **Name**         | `[Your Name]`         |
-| **Email**        | `[Your Email Address]`|
-| **Message**      | `[Your Message Here]` |
-
-Submit your information through our [Contact Form](https://getform.io/f/bqoodkdb). We will get back to you as soon as possible!
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="4" required style="margin-bottom:10px; padding:5px;"></textarea>
+  
+  <button type="submit" style="padding:10px; background-color:blue; color:white; border:none;">Submit</button>
+</form>
 3. **Reach us via Instagram** at [@tmo_kashmir](https://www.instagram.com/tmo_kashmir).
 
 ## Thanks For Reading
