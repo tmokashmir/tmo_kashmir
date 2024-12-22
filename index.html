@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Models of Kashmir</title>
+    <style>
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #2c3e50;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 20px;
+        }
+
+        .sidebar img.logo {
+            width: 80px;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid #575757;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+        }
+
+        .main-content {
+            margin-left: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            color: #34495e;
+        }
+
+        #latest-updates {
+            color: red;
+            font-weight: bold;
+        }
+
+        .toggle-section {
+            cursor: pointer;
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .toggle-section + .toggle-content {
+            display: none;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        .toggle-section.open + .toggle-content {
+            display: block;
+        }
+
+        .faq-item {
+            margin: 10px 0;
+        }
+
+        .faq-item .question {
+            display: flex;
+            justify-content: space-between;
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .faq-item .answer {
+            display: none;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+        .faq-item.open .answer {
+            display: block;
+        }
+
+        .footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer .social-links a {
+            margin: 0 10px;
+        }
+
+        .footer .social-links img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+
+        .footer .copy-text {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#welcome-section">Welcome</a>
+        <a href="#about-us">About Us</a>
+        <a href="#latest-updates">Latest Updates</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-and-conditions">Terms & Conditions</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq-list">FAQs</a>
+    </div>
+
+    <!-- Button to open the sidebar -->
+    <button class="openbtn" onclick="openNav()">☰</button>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Welcome Section -->
+        <section id="welcome-section">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="images/tmo_kashmir_logo.png" alt="TMO Kashmir Logo" style="width: 200px; height: auto; margin-bottom: 10px;">
+                <h2>Welcome to TMO Kashmir</h2>
+                <p>Your gateway to the world of fashion, creativity, and collaboration in Kashmir.</p>
+            </div>
+        </section>
+
+        <!-- Other Sections (About Us, Updates, FAQs, etc.) -->
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>Top Models of Kashmir is a premier platform dedicated to showcasing the hidden talents of aspiring models in the region...</p>
+        </section>
+        
+        <!-- Remaining sections go here -->
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://youtube.com/@tmo_kashmir?si=7mvIZ1bJ-RmQN359" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/tmo_kashmir?igshid=b3Btems3MG5id3Rh" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+        </div>
+        <div class="copy-text">
+            &copy; 2024 TMO Kashmir. All rights reserved. Created by Haroon.
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        function toggleContent(element) {
+            element.classList.toggle("open");
+        }
+
+        function toggleFAQItem(element) {
+            element.parentElement.classList.toggle("open");
+        }
+    </script>
+</body>
+
+</html>
