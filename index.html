@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Models of Kashmir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #2c3e50;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: white;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #ddd;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Open Sidebar button */
+        .sidebar-open-btn {
+            font-size: 30px;
+            cursor: pointer;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 15px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #34495e;
+        }
+
+        /* Updates Section */
+        .updates-section {
+            margin-top: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .updates-section h3 {
+            color: white;
+        }
+
+        .updates-section p {
+            color: white;
+        }
+
+        /* Video styling for portrait mode */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .video-container iframe {
+            width: 320px; /* Adjust to fit portrait mode */
+            height: 570px; /* Adjust to fit portrait mode */
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #34495e;
+        }
+
+        /* Notification styles */
+        .notification-btn {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .notification-content {
+            display: none;
+            margin-top: 20px;
+            background-color: #f39c12;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* Privacy and terms section */
+        .terms-privacy-section {
+            background-color: #f4f4f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Logo styles */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .logo-container img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Welcoming message */
+        .welcome-message {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#about-us">About Us</a>
+        <a href="#models">Models</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#submit-portfolio">Submit Portfolio</a>
+        <a href="#latest-updates">Latest Updates</a>
+        <a href="#faq">FAQ</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-and-conditions">Terms and Conditions</a>
+        <a href="#contact">Contact</a>
+        <a href="#question-form">Question for TMO Kashmir</a>
+    </div>
+
+    <!-- Button to open the sidebar -->
+    <button class="sidebar-open-btn" onclick="openNav()">☰ Open Sidebar</button>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Top Models of Kashmir Dashboard</h1>
+            <button class="notification-btn" onclick="toggleNotifications()">Check Updates</button>
+        </header>
+
+        <!-- Notification Section -->
+        <div id="notificationContent" class="notification-content">
+            <h3>Latest Updates:</h3>
+            <p><strong>Collaboration:</strong> TMO Kashmir is open for collaboration with models, photographers, and brands. If you are interested in collaborating with us, please watch our collaboration video and send your details.</p>
+            <p><strong>Promotion:</strong> TMO Kashmir provides promotion services for emerging models in Kashmir. Reach out to us for more details on how we can help promote your portfolio and grow your presence in the fashion industry.</p>
+        </div>
+
+        <!-- Welcoming Message -->
+        <div class="welcome-message">
+            <p>Welcome to Top Models of Kashmir! Discover, collaborate, and connect with the best in the fashion industry.</p>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="logo-url-here.png" alt="TMO Kashmir Logo">
+        </div>
+
+        <!-- About Us Section -->
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>Top Models of Kashmir (TMO Kashmir) is dedicated to showcasing the talent of aspiring models from the Kashmir Valley. Our mission is to bridge the gap between local models and industry opportunities, empowering them to pursue successful careers in fashion by providing exposure and professional support.</p>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy-policy" class="terms-privacy-section">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. TMO Kashmir collects personal information from users to provide a better user experience. We do not share your information with third parties without your consent. For more details, please contact us through the contact form.</p>
+        </section>
+
+        <!-- Terms and Conditions Section -->
+        <section id="terms-and-conditions" class="terms-privacy-section">
+            <h2>Terms and Conditions</h2>
+            <p>By using the TMO Kashmir website, you agree to our terms and conditions. We reserve the right to modify these terms at any time. It is your responsibility to review these terms periodically. Use of this website indicates acceptance of these terms.</p>
+        </section>
+
+        <!-- Collaboration Video Section -->
+        <section id="collaboration-video">
+            <h2>Collaboration Requests</h2>
+            <p>If you want to collaborate with TMO Kashmir, watch the video below and follow the instructions:</p>
+            
+            <!-- Video Section in Portrait Mode -->
+            <div class="video-container">
+                <iframe src="https://www.instagram.com/reel/DDzBj4vSOIY/?igsh=NnVndGNmNXBzYW5u" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Contact Us and Portfolio Submission Form Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            
+            <!-- Contact Form -->
+            <form action="https://getform.io/f/bqoodkdb" method="POST">
+                <h3>Contact Form</h3>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name
