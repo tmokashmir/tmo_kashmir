@@ -34,7 +34,7 @@ If you're a model, photographer, or brand interested in collaborating with us, y
   
   <button type="submit" style="padding:10px; background-color:blue; color:white; border:none;">Submit</button>
 </form>
- 2.  **Reach us via Instagram** at [@tmo_kashmir](https://www.instagram.com/tmo_kashmir).
+2. Reach us via Instagram at [@tmo_kashmir](https://www.instagram.com/tmo_kashmir).
 
 ## Thanks For Reading
 Regards TMO Kashmir Admin **HAROON**
