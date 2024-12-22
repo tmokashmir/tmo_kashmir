@@ -21,7 +21,18 @@ Welcome to the official website of **Top Models of Kashmir** (@tmo_kashmir), a p
 If you're a model, photographer, or brand interested in collaborating with us, you can:
 
 1. **Fill out the contact form** on the website.
-2. **Reach us via Instagram** at [@tmo_kashmir](https://www.instagram.com/tmo_kashmir).
+2.  ## Contact Us
+
+You can fill out the form below and send us your details:
+
+| Field           | Input                 |
+|------------------|-----------------------|
+| **Name**         | `[Your Name]`         |
+| **Email**        | `[Your Email Address]`|
+| **Message**      | `[Your Message Here]` |
+
+Submit your information through our [Contact Form](https://getform.io/f/bqoodkdb). We will get back to you as soon as possible!
+3. **Reach us via Instagram** at [@tmo_kashmir](https://www.instagram.com/tmo_kashmir).
 
 ## Thanks For Reading
 Regards TMO Kashmir Admin **HAROON**
