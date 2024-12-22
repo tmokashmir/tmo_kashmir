@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Models of Kashmir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .main-content {
+            margin-left: 200px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button.notification-btn {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        button.notification-btn:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            color: #34495e;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .models-list, .gallery, .updates, .portfolio-submission {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .model-item, .gallery-item, .portfolio-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        .model-item img, .gallery-item img, .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .model-item h3 {
+            color: #2980b9;
+        }
+
+        .model-item p {
+            color: #7f8c8d;
+        }
+
+        .form-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .form-container form input, .form-container form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .form-container form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#models">Models</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#submit-portfolio">Submit Portfolio</a></li>
+            <li><a href="#latest-updates">Latest Updates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Top Models of Kashmir Dashboard</h1>
+            <button class="notification-btn">Notifications</button>
+        </header>
+
+        <!-- About Us Section -->
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>Top Models of Kashmir is a platform dedicated to showcasing the finest models in the region. We aim to provide an opportunity for talented individuals to gain recognition and exposure in the modeling industry. Our website features models' portfolios, a gallery, and updates on the latest events and photoshoots in Kashmir.</p>
+        </section>
+
+        <!-- Models Section -->
+        <section id="models">
+            <h2>Models</h2>
+            <div class="models-list">
+                <div class="model-item">
+                    <img src="model1.jpg" alt="Model 1">
+                    <h3>Model Name 1</h3>
+                    <p>Short Bio of the model goes here.</p>
+                </div>
+                <div class="model-item">
+                    <img src="model2.jpg" alt="Model 2">
+                    <h3>Model Name 2</h3>
+                    <p>Short Bio of the model goes here.</p>
+                </div>
+                <!-- Add more models as needed -->
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="photo1.jpg" alt="Photo 1">
+                    <p>Photoshoot Title</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="photo2.jpg" alt="Photo 2">
+                    <p>Photoshoot Title</p>
+                </div>
+                <!-- Add more gallery items as needed -->
+            </div>
+        </section>
+
+        <!-- Submit Portfolio Section -->
+        <section id="submit-portfolio" class="portfolio-submission">
+            <h2>Submit Your Portfolio</h2>
+            <div class="form-container">
+                <form action="https://getform.io/f/bqoodkdb" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="portfolio" placeholder="Describe Your Portfolio" rows="5" required></textarea>
+                    <input type="file" name="photo" accept="image/*" required>
+                    <button type="submit">Submit Portfolio</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Latest Updates Section -->
+        <section id="latest-updates">
+            <h2>Latest Updates</h2>
+            <div class="updates">
+                <div class="update-item">
+                    <h3>Event 1</h3>
+                    <p>Details of the latest event happening in Kashmir.</p>
+                </div>
+                <div class="update-item">
+                    <h3>Event 2</h3>
+                    <p>Details of another upcoming event.</p>
+                </div>
+                <!-- Add more updates as needed -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries, feel free to reach out to us.</p>
+            <p>Email: <a href="mailto:info@tmo-kashmir.com">info@tmo-kashmir.com</a></p>
+        </section>
+    </div>
+</body>
+</html>
