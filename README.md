@@ -1,4 +1,4 @@
-<span style="color:red;">***Website Under maintenance***.</span>
+<span style="color:red;">*Website Under maintenance*</span>
 ![Top Models Of Kashmir Logo](logo1.png)
 # Top Models of Kashmir - Official Website
 
