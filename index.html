@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Models Of Kashmir</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #1e90ff;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      background: #f4f4f4;
+      height: 100%;
+      padding: 20px;
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    .sidebar a, .collapsible {
+      display: block;
+      color: #000;
+      padding: 10px;
+      text-decoration: none;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    .sidebar a:hover, .collapsible:hover {
+      background: #1e90ff;
+      color: white;
+    }
+
+    .main-content {
+      margin-left: 270px;
+      padding: 20px;
+    }
+
+    .content {
+      display: none;
+      margin-left: 15px;
+      padding-left: 10px;
+      border-left: 2px solid #ccc;
+    }
+
+    .updates {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f4f4f4;
+      padding: 10px 0;
+      overflow: hidden;
+      border-top: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .updates p {
+      display: inline-block;
+      margin: 0;
+      white-space: nowrap;
+      animation: scroll-left 10s linear infinite;
+      font-size: 14px;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    footer {
+      background: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header with Logo and Navigation Toggle -->
+<header>
+  <div class="logo">Top Models Of Kashmir</div>
+  <span class="menu-toggle" onclick="toggleSidebar()">☰</span>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#social">Social Media</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#faqs">FAQs</a>
+  </nav>
+</header>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="#home">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#social">Social Media</a>
+  <a href="#contact">Contact Us</a>
+  <a href="#feedback">Feedback</a>
+  <a href="#faqs">FAQs</a>
+  <button class="collapsible">Privacy Policy</button>
+  <div class="content">
+    <p>Details about privacy policy go here.</p>
+  </div>
+  <button class="collapsible">Terms & Conditions</button>
+  <div class="content">
+    <p>Details about terms & conditions go here.</p>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  <section id="home">
+    <h2>Home</h2>
+    <p>Connecting the best talents in Kashmir with the world.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>TMO Kashmir is a platform designed to showcase and promote Kashmiri talent.</p>
+  </section>
+
+  <section id="social">
+    <h2>Follow Us</h2>
+    <p>Stay connected through our social media platforms:</p>
+    <ul>
+      <li><a href="https://youtube.com/@tmo_kashmir" target="_blank">YouTube</a></li>
+      <li><a href="https://www.instagram.com/tmo_kashmir" target="_blank">Instagram</a></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><a href="https://getform.io/f/bqoodkdb" target="_blank">Submit your inquiries here</a></p>
+  </section>
+
+  <section id="feedback">
+    <h2>Feedback</h2>
+    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-PC-gEkZstwHbjFRg7Dq6JuwRptqqg7DaS-qaGyncqvZQYQ/viewform?usp=header" target="_blank">Submit your feedback here</a></p>
+  </section>
+
+  <section id="faqs">
+    <h2>FAQs</h2>
+    <p><strong>What does TMO Kashmir stand for?</strong></p>
+    <p>Top Models of Kashmir.</p>
+    <p><strong>Who is the admin of TMO Kashmir?</strong></p>
+    <p>Name: Haroon<br>Location: Srinagar, Jammu and Kashmir.</p>
+    <p><strong>How can I collaborate with TMO Kashmir?</strong></p>
+    <p>Anyone can collaborate with us by contacting us directly.</p>
+  </section>
+</div>
+
+<!-- Update Section -->
+<div class="updates">
+  <p>Top Models Of Kashmir is now open for collaborations! Showcase your talent today! Join hands with us to grow and succeed.</p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2024 TMO Kashmir All rights Created By Haroon</p>
+</footer>
+
+<!-- JavaScript for Sidebar and Collapsible Sections -->
+<script>
+  const collapsibles = document.querySelectorAll(".collapsible");
+  collapsibles.forEach((collapsible) => {
+    collapsible.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  });
+
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
