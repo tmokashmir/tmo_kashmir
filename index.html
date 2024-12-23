@@ -281,12 +281,14 @@
   </div>
 </footer>
 
+<!-- Modal Popup for Privacy Policy and Terms & Conditions -->
 <div id="policy-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); color:white; z-index:1000; overflow:auto; padding:20px;">
-  <span onclick="closePolicy()" style="cursor:pointer; font-size:20px; color:red; position:absolute; top:10px; right:20px;">✖</span>
+  <span onclick="closePolicy()" style="cursor:pointer; font-size:20px; color:red; position:absolute; top:10px; right:20px;">❌</span>
   <div id="policy-content" style="margin-top:40px;"></div>
 </div>
 
 <script>
+  // Show the modal popup with content
   function showPolicy(type) {
     const modal = document.getElementById("policy-modal");
     const content = document.getElementById("policy-content");
@@ -297,11 +299,12 @@
       content.innerHTML = "<h2>Terms & Conditions</h2><p>Details about terms and conditions go here...</p>";
     }
 
-    modal.style.display = "block";
+    modal.style.display = "block"; // Display the modal
   }
 
+  // Close the modal popup
   function closePolicy() {
     const modal = document.getElementById("policy-modal");
-    modal.style.display = "none";
+    modal.style.display = "none"; // Hide the modal
   }
 </script>
