@@ -315,25 +315,16 @@
     <div class="content">
       <p
         <!-- Footer -->
+<!-- Footer -->
 <footer>
   <div class="footer-content">
-    <!-- Social Media Links with Logos -->
-    <div class="social-media">
-      <a href="https://www.instagram.com/yourinstagramprofile" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
-      </a>
-      <a href="https://www.youtube.com/channel/yourchannelid" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-      </a>
-    </div>
-
     <!-- Copyright Info -->
     <p>© 2024 TMO Kashmir. All rights reserved.</p>
 
     <!-- Links to Privacy Policy and Terms of Service -->
     <div class="footer-links">
-      <a href="#privacyPolicy" onclick="openModal('privacyPolicy')">Privacy Policy</a> |
-      <a href="#termsConditions" onclick="openModal('termsConditions')">Terms & Conditions</a>
+      <a href="javascript:void(0);" onclick="toggleModal('privacyPolicy')">Privacy Policy</a> |
+      <a href="javascript:void(0);" onclick="toggleModal('termsConditions')">Terms & Conditions</a>
     </div>
 
     <!-- Partners Section -->
@@ -341,6 +332,17 @@
       <p>Our Partners:</p>
       <a href="https://www.partnerlink.com" target="_blank">
         <img src="https://via.placeholder.com/100x50" alt="Partner Logo">
+      </a>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social-media">
+      <p>Follow us:</p>
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" class="social-icon">
+      </a>
+      <a href="https://www.youtube.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo" class="social-icon">
       </a>
     </div>
   </div>
@@ -363,10 +365,12 @@
   </div>
 </div>
 
-<!-- JavaScript for Modal Popup functionality -->
+<!-- JavaScript for Modal functionality -->
 <script>
-  function openModal(id) {
-    document.getElementById(id).style.display = "block";
+  // Toggle Modal Popup for Privacy Policy and Terms & Conditions
+  function toggleModal(id) {
+    var modal = document.getElementById(id);
+    modal.style.display = (modal.style.display === "block") ? "none" : "block";
   }
 
   function closeModal(id) {
@@ -374,7 +378,7 @@
   }
 </script>
 
-<!-- CSS for Footer and Modal -->
+<!-- CSS for Footer and Modal Styles -->
 <style>
   footer {
     background-color: #1e90ff;
@@ -386,16 +390,6 @@
   .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-  }
-
-  .social-media a {
-    margin: 0 15px;
-    color: white;
-  }
-
-  .social-media img {
-    width: 40px;
-    height: 40px;
   }
 
   .footer-links a {
@@ -415,6 +409,30 @@
     width: 100px;
     height: 50px;
     margin: 5px;
+  }
+
+  /* Social Media Section */
+  .social-media {
+    margin-top: 20px;
+  }
+
+  .social-media p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .social-media a {
+    margin: 0 10px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.1);
   }
 
   /* Modal Styles */
