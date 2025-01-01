@@ -361,15 +361,11 @@
   </div>
 </div>
 
+<!-- JavaScript for Modal and Collapsible Section -->
 <script>
   // Toggle Sidebar
   function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    if (sidebar) {
-      sidebar.classList.toggle('active');
-    } else {
-      console.error("Sidebar element with id 'sidebar' not found.");
-    }
+    document.getElementById('sidebar').classList.toggle('active');
   }
 
   // Collapsible Sections
@@ -378,14 +374,10 @@
     coll[i].addEventListener("click", function() {
       this.classList.toggle("active");
       var content = this.nextElementSibling;
-      if (content) {
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
+      if (content.style.display === "block") {
+        content.style.display = "none";
       } else {
-        console.error("Collapsible content not found for:", this);
+        content.style.display = "block";
       }
     });
   }
@@ -393,41 +385,24 @@
   // Open Modal for Privacy Policy or Terms
   function openModal(type) {
     if (type === 'privacy') {
-      const privacyModal = document.getElementById('privacyModal');
-      if (privacyModal) {
-        privacyModal.style.display = 'block';
-      } else {
-        console.error("Privacy modal not found.");
-      }
+      document.getElementById('privacyModal').style.display = 'block';
     } else if (type === 'terms') {
-      const termsModal = document.getElementById('termsModal');
-      if (termsModal) {
-        termsModal.style.display = 'block';
-      } else {
-        console.error("Terms modal not found.");
-      }
+      document.getElementById('termsModal').style.display = 'block';
     }
   }
 
   // Close Modal
   function closeModal() {
-    const privacyModal = document.getElementById('privacyModal');
-    const termsModal = document.getElementById('termsModal');
-    if (privacyModal) privacyModal.style.display = 'none';
-    if (termsModal) termsModal.style.display = 'none';
+    document.getElementById('privacyModal').style.display = 'none';
+    document.getElementById('termsModal').style.display = 'none';
   }
 
   // Sliding Updates Section (Optional)
   setInterval(function() {
     var updatesText = document.querySelector('.updates-text');
-    if (updatesText) {
-      updatesText.style.transform = 'translateX(-100%)';
-      updatesText.style.transition = 'transform 1s linear';
-      setTimeout(() => {
-        updatesText.style.transform = 'translateX(0)';
-      }, 2000); // Reset after animation
-    } else {
-      console.error("Sliding updates section not found.");
-    }
+    updatesText.style.transform = 'translateX(-100%)';
   }, 10000);
 </script>
+
+</body>
+</html>
