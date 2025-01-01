@@ -361,48 +361,130 @@
   </div>
 </div>
 
-<!-- JavaScript for Modal and Collapsible Section -->
-<script>
-  // Toggle Sidebar
-  function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('active');
-  }
-
-  // Collapsible Sections
-  var coll = document.getElementsByClassName("collapsible");
-  for (var i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
-  }
-
-  // Open Modal for Privacy Policy or Terms
-  function openModal(type) {
-    if (type === 'privacy') {
-      document.getElementById('privacyModal').style.display = 'block';
-    } else if (type === 'terms') {
-      document.getElementById('termsModal').style.display = 'block';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collapsible Sections and Modals</title>
+  <style>
+    /* Collapsible Styles */
+    .collapsible {
+      background-color: #f1f1f1;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+      text-align: left;
     }
-  }
 
-  // Close Modal
-  function closeModal() {
-    document.getElementById('privacyModal').style.display = 'none';
-    document.getElementById('termsModal').style.display = 'none';
-  }
+    .collapsible.active {
+      background-color: #e2e2e2;
+    }
 
-  // Sliding Updates Section (Optional)
-  setInterval(function() {
-    var updatesText = document.querySelector('.updates-text');
-    updatesText.style.transform = 'translateX(-100%)';
-  }, 10000);
-</script>
+    .content {
+      display: none; /* Hidden by default */
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      margin-bottom: 5px;
+    }
 
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      width: 50%;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Collapsible Sections and Modal Example</h1>
+
+  <!-- Collapsible Sections -->
+  <div class="collapsible">Section 1</div>
+  <div class="content">
+    <p>This is the content of Section 1.</p>
+  </div>
+
+  <div class="collapsible">Section 2</div>
+  <div class="content">
+    <p>This is the content of Section 2.</p>
+  </div>
+
+  <!-- Buttons to Open Modals -->
+  <button onclick="openModal('privacy')">Open Privacy Policy</button>
+  <button onclick="openModal('terms')">Open Terms and Conditions</button>
+
+  <!-- Privacy Modal -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+      <h2>Privacy Policy</h2>
+      <p>This is the Privacy Policy content.</p>
+    </div>
+  </div>
+
+  <!-- Terms Modal -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('termsModal')">&times;</span>
+      <h2>Terms and Conditions</h2>
+      <p>This is the Terms and Conditions content.</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for Collapsible Sections
+    document.addEventListener("DOMContentLoaded", function () {
+      const collapsibles = document.querySelectorAll(".collapsible");
+      collapsibles.forEach(collapsible => {
+        collapsible.addEventListener("click", function () {
+          this.classList.toggle("active");
+          const content = this.nextElementSibling;
+          content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+      });
+    });
+
+    // JavaScript for Modals
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId + "Modal");
+      modal.style.display = "flex";
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 </html>
