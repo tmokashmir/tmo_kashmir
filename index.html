@@ -361,11 +361,15 @@
   </div>
 </div>
 
-<!-- JavaScript for Modal and Collapsible Section -->
 <script>
   // Toggle Sidebar
   function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('active');
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+      sidebar.classList.toggle('active');
+    } else {
+      console.error("Sidebar element with id 'sidebar' not found.");
+    }
   }
 
   // Collapsible Sections
@@ -374,10 +378,14 @@
     coll[i].addEventListener("click", function() {
       this.classList.toggle("active");
       var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
+      if (content) {
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
       } else {
-        content.style.display = "block";
+        console.error("Collapsible content not found for:", this);
       }
     });
   }
@@ -385,24 +393,41 @@
   // Open Modal for Privacy Policy or Terms
   function openModal(type) {
     if (type === 'privacy') {
-      document.getElementById('privacyModal').style.display = 'block';
+      const privacyModal = document.getElementById('privacyModal');
+      if (privacyModal) {
+        privacyModal.style.display = 'block';
+      } else {
+        console.error("Privacy modal not found.");
+      }
     } else if (type === 'terms') {
-      document.getElementById('termsModal').style.display = 'block';
+      const termsModal = document.getElementById('termsModal');
+      if (termsModal) {
+        termsModal.style.display = 'block';
+      } else {
+        console.error("Terms modal not found.");
+      }
     }
   }
 
   // Close Modal
   function closeModal() {
-    document.getElementById('privacyModal').style.display = 'none';
-    document.getElementById('termsModal').style.display = 'none';
+    const privacyModal = document.getElementById('privacyModal');
+    const termsModal = document.getElementById('termsModal');
+    if (privacyModal) privacyModal.style.display = 'none';
+    if (termsModal) termsModal.style.display = 'none';
   }
 
   // Sliding Updates Section (Optional)
   setInterval(function() {
     var updatesText = document.querySelector('.updates-text');
-    updatesText.style.transform = 'translateX(-100%)';
+    if (updatesText) {
+      updatesText.style.transform = 'translateX(-100%)';
+      updatesText.style.transition = 'transform 1s linear';
+      setTimeout(() => {
+        updatesText.style.transform = 'translateX(0)';
+      }, 2000); // Reset after animation
+    } else {
+      console.error("Sliding updates section not found.");
+    }
   }, 10000);
 </script>
-
-</body>
-</html>
