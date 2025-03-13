@@ -290,7 +290,9 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
     <title>TMO_K Services</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        .platform { margin-bottom: 20px; }
+        .platform, .services { display: none; margin-bottom: 20px; }
+        .category { cursor: pointer; margin: 10px 0; }
+        .show { display: block; }
         label { display: block; margin: 5px 0; }
         button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
         button:hover { background-color: #45a049; }
@@ -305,59 +307,91 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
         <!-- Username Input -->
         <label>Username: <input type="text" id="username"></label>
 
-        <div class="platform">
-            <h3>Instagram</h3>
-            <label>Followers (1k/₹130): <input type="number" id="followers" onchange="calculatePrice()"></label>
-            <label>Likes (1k/₹15): <input type="number" id="likes" onchange="calculatePrice()"></label>
-            <label>Views (1k/₹3): <input type="number" id="views" onchange="calculatePrice()"></label>
-            <label>Comments (1k/₹149): <input type="number" id="comments" onchange="calculatePrice()"></label>
-            <label>Custom Comments (1k/₹199): <input type="number" id="custom_comments" onchange="calculatePrice()"></label>
-            <label>Story Views (1k/₹2): <input type="number" id="story_views" onchange="calculatePrice()"></label>
+        <!-- Category Selection -->
+        <div>
+            <div class="category" onclick="showPlatform('instagram')">Instagram</div>
+            <div class="category" onclick="showPlatform('youtube')">YouTube</div>
+            <div class="category" onclick="showPlatform('tiktok')">TikTok</div>
+            <div class="category" onclick="showPlatform('facebook')">Facebook</div>
+            <div class="category" onclick="showPlatform('telegram')">Telegram</div>
         </div>
 
-        <!-- Other Platforms -->
-        <div class="platform">
-            <h3>Other Platforms (TikTok, YouTube, Facebook, etc.)</h3>
-            <label>Followers (1k/₹140): <input type="number" id="other_followers" onchange="calculatePrice()"></label>
-            <label>Likes (1k/₹25): <input type="number" id="other_likes" onchange="calculatePrice()"></label>
+        <!-- Instagram Services -->
+        <div class="platform" id="instagram">
+            <h3>Instagram Services</h3>
+            <div class="services" id="instagram_services">
+                <label>Followers (1k/₹130): <input type="number" id="instagram_followers" onchange="calculatePrice()"></label>
+                <label>Likes (1k/₹15): <input type="number" id="instagram_likes" onchange="calculatePrice()"></label>
+                <label>Views (1k/₹3): <input type="number" id="instagram_views" onchange="calculatePrice()"></label>
+                <label>Comments (1k/₹149): <input type="number" id="instagram_comments" onchange="calculatePrice()"></label>
+                <label>Custom Comments (1k/₹199): <input type="number" id="instagram_custom_comments" onchange="calculatePrice()"></label>
+                <label>Story Views (1k/₹2): <input type="number" id="instagram_story_views" onchange="calculatePrice()"></label>
+            </div>
         </div>
 
+        <!-- YouTube Services -->
+        <div class="platform" id="youtube">
+            <h3>YouTube Services</h3>
+            <div class="services" id="youtube_services">
+                <label>Subscribers (1k/₹150): <input type="number" id="youtube_subscribers" onchange="calculatePrice()"></label>
+                <label>Views (1k/₹10): <input type="number" id="youtube_views" onchange="calculatePrice()"></label>
+            </div>
+        </div>
+
+        <!-- Other Platforms (similar structure as Instagram and YouTube) -->
+        <div class="platform" id="tiktok">
+            <h3>TikTok Services</h3>
+            <div class="services" id="tiktok_services">
+                <label>Followers (1k/₹140): <input type="number" id="tiktok_followers" onchange="calculatePrice()"></label>
+                <label>Likes (1k/₹25): <input type="number" id="tiktok_likes" onchange="calculatePrice()"></label>
+            </div>
+        </div>
+
+        <!-- Real-Time Calculation -->
         <h3>Total Price: ₹<span id="total_price">0</span></h3>
-    </section>
 
-    <!-- Payment Section -->
-    <section id="payment">
-        <h3>Payment</h3>
-        <p>Use the UPI ID: <strong>tmo-kashmir@jio</strong></p>
-
-        <!-- QR Code -->
-        <div class="qr-code">
-            <img src="qrcode.png" alt="QR Code" style="max-width: 150px; width: 100%; height: auto;">
-        </div>
-
-        <label>Transaction ID: <input type="text" id="transaction_id"></label>
-        <button onclick="submitPayment()">Submit Payment</button>
+        <!-- Payment Section -->
+        <section id="payment">
+            <h3>Payment Method</h3>
+            <p>Use the UPI ID: <strong>tmo-kashmir@jio</strong></p>
+            <div class="qr-code">
+                <img src="qrcode.png" alt="QR Code" style="max-width: 150px; width: 100%; height: auto;">
+            </div>
+            <label>Transaction ID: <input type="text" id="transaction_id"></label>
+            <button onclick="submitPayment()">Submit Payment</button>
+        </section>
     </section>
 
     <script>
+        function showPlatform(platform) {
+            // Hide all platforms
+            document.querySelectorAll('.platform').forEach(platformDiv => platformDiv.classList.remove('show'));
+            document.querySelectorAll('.services').forEach(serviceDiv => serviceDiv.classList.remove('show'));
+
+            // Show the selected platform and its services
+            document.getElementById(platform).classList.add('show');
+            document.getElementById(platform + '_services').classList.add('show');
+        }
+
         function calculatePrice() {
-            let instagramFollowers = document.getElementById("followers").value || 0;
-            let instagramLikes = document.getElementById("likes").value || 0;
-            let instagramViews = document.getElementById("views").value || 0;
-            let instagramComments = document.getElementById("comments").value || 0;
-            let customComments = document.getElementById("custom_comments").value || 0;
-            let storyViews = document.getElementById("story_views").value || 0;
-            let otherFollowers = document.getElementById("other_followers").value || 0;
-            let otherLikes = document.getElementById("other_likes").value || 0;
+            let total = 0;
 
             // Instagram prices
-            let instagramTotal = (instagramFollowers * 130) + (instagramLikes * 15) + (instagramViews * 3) + (instagramComments * 149) + (customComments * 199) + (storyViews * 2);
+            total += (document.getElementById("instagram_followers").value || 0) * 130;
+            total += (document.getElementById("instagram_likes").value || 0) * 15;
+            total += (document.getElementById("instagram_views").value || 0) * 3;
+            total += (document.getElementById("instagram_comments").value || 0) * 149;
+            total += (document.getElementById("instagram_custom_comments").value || 0) * 199;
+            total += (document.getElementById("instagram_story_views").value || 0) * 2;
 
-            // Other platforms (add ₹10 for each service)
-            let otherTotal = (otherFollowers * 140) + (otherLikes * 25);
+            // YouTube prices
+            total += (document.getElementById("youtube_subscribers").value || 0) * 150;
+            total += (document.getElementById("youtube_views").value || 0) * 10;
 
-            // Total Price
-            let total = instagramTotal + otherTotal;
+            // TikTok prices
+            total += (document.getElementById("tiktok_followers").value || 0) * 140;
+            total += (document.getElementById("tiktok_likes").value || 0) * 25;
+
             document.getElementById("total_price").textContent = total;
         }
 
@@ -372,10 +406,6 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
                 alert("Please enter a valid Transaction ID.");
             }
         }
-    </script>
-
-</body>
-</html>
     </script>
 
 </body>
