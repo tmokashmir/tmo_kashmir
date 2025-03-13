@@ -282,7 +282,7 @@ At Top Models of Kashmir, we believe that fashion and modeling are powerful form
 
 Whether you're a budding model, a fashion enthusiast, or simply someone who appreciates elegance and talent, we invite you to join our journey as we redefine the modeling scene in Kashmir, one inspiring story at a time.</p>
   </section>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -294,17 +294,19 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
         label { display: block; margin: 5px 0; }
         button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
         button:hover { background-color: #45a049; }
+        .qr-code { text-align: center; margin: 20px 0; }
     </style>
 </head>
 <body>
 
     <section id="services">
-        <h2>Select Your Platform</h2>
+        <h2>TMO_K Services</h2>
 
-        <!-- Instagram Services -->
+        <!-- Username Input -->
+        <label>Username: <input type="text" id="username"></label>
+
         <div class="platform">
             <h3>Instagram</h3>
-            <label>Username: <input type="text" name="instagram_username" id="instagram_username"></label>
             <label>Followers (1k/₹130): <input type="number" id="followers" onchange="calculatePrice()"></label>
             <label>Likes (1k/₹15): <input type="number" id="likes" onchange="calculatePrice()"></label>
             <label>Views (1k/₹3): <input type="number" id="views" onchange="calculatePrice()"></label>
@@ -323,18 +325,19 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
         <h3>Total Price: ₹<span id="total_price">0</span></h3>
     </section>
 
-  <section id="payment">
-    <h3>Payment</h3>
-    <p>Use the UPI ID: <strong>tmo-kashmir@jio</strong></p>
+    <!-- Payment Section -->
+    <section id="payment">
+        <h3>Payment</h3>
+        <p>Use the UPI ID: <strong>tmo-kashmir@jio</strong></p>
 
-    <!-- QR Code -->
-    <div style="text-align: center;">
-        <img src="qrcode.png" alt="QR Code" style="max-width: 150px; width: 100%; height: auto;">
-    </div>
+        <!-- QR Code -->
+        <div class="qr-code">
+            <img src="qrcode.png" alt="QR Code" style="max-width: 150px; width: 100%; height: auto;">
+        </div>
 
-    <label>Transaction ID: <input type="text" name="transaction_id" id="transaction_id"></label>
-    <button onclick="submitPayment()">Submit Payment</button>
-  </section>
+        <label>Transaction ID: <input type="text" id="transaction_id"></label>
+        <button onclick="submitPayment()">Submit Payment</button>
+    </section>
 
     <script>
         function calculatePrice() {
@@ -369,6 +372,10 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
                 alert("Please enter a valid Transaction ID.");
             }
         }
+    </script>
+
+</body>
+</html>
     </script>
 
 </body>
