@@ -283,45 +283,68 @@ At Top Models of Kashmir, we believe that fashion and modeling are powerful form
 Whether you're a budding model, a fashion enthusiast, or simply someone who appreciates elegance and talent, we invite you to join our journey as we redefine the modeling scene in Kashmir, one inspiring story at a time.</p>
   </section>
 <section id="tmo_k-service">
-    <h2>TMO_K Services</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMO_K Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <label>Select Platform:</label>
-    <div class="categories">
-        <button onclick="showServices('instagram')">Instagram</button>
-        <button onclick="showServices('youtube')">YouTube</button>
-        <button onclick="showServices('tiktok')">TikTok</button>
-        <button onclick="showServices('telegram')">Telegram</button>
-        <button onclick="showServices('twitter')">Twitter</button>
-        <button onclick="showServices('facebook')">Facebook</button>
-    </div>
+    <header>
+        <h1>Welcome to TMO_K Services</h1>
+    </header>
 
-    <div id="services" class="hidden">
-        <h3>Select Service:</h3>
-        <select id="service-type" onchange="updatePrice()">
-            <option value="followers">Followers</option>
-            <option value="likes">Likes</option>
-            <option value="comments">Comments</option>
-            <option value="views">Views</option>
-            <option value="story_views">Story Views</option>
+    <section id="service-selection">
+        <h2>Select a Service</h2>
+        
+        <label for="platform">Select Platform:</label>
+        <select id="platform">
+            <option value="">-- Select --</option>
+            <option value="instagram">Instagram</option>
+            <option value="youtube">YouTube</option>
+            <option value="tiktok">TikTok</option>
+            <option value="telegram">Telegram</option>
+            <option value="twitter">Twitter</option>
+            <option value="facebook">Facebook</option>
         </select>
 
-        <label>Enter Quantity:</label>
-        <input type="number" id="quantity" min="1000" step="1000" placeholder="Enter quantity" oninput="updatePrice()">
-
-        <p><strong>Total Price: ₹<span id="total-price">0</span></strong></p>
-    </div>
-
-    <div id="payment-section" class="hidden">
-        <h3>Make Payment</h3>
-        <p>Send payment to <strong>tmo-kashmir@jio</strong> or scan the QR code below:</p>
-        <div class="qr-container">
-            <img src="qrcode.png" alt="UPI QR Code" id="qr-code" onclick="expandQR()">
+        <div id="services-container" style="display: none;">
+            <label for="service">Select Service:</label>
+            <select id="service">
+                <option value="">-- Select --</option>
+            </select>
         </div>
 
-        <label>Enter UPI Transaction ID:</label>
-        <input type="text" id="upi-transaction" placeholder="Transaction ID">
-        <button onclick="confirmPayment()">Submit Payment</button>
-    </div>
+        <div id="quantity-container" style="display: none;">
+            <label for="quantity">Enter Quantity:</label>
+            <input type="number" id="quantity" min="1000" step="1000" value="1000">
+        </div>
+
+        <h3>Total Price: ₹<span id="total-price">0</span></h3>
+
+        <button id="proceed-payment" style="display: none;">Proceed to Payment</button>
+    </section>
+
+    <section id="payment-section" style="display: none;">
+        <h2>Complete Payment</h2>
+        <p>Send payment to **tmo-kashmir@jio** or scan the QR code below:</p>
+        <img src="qrcode.png" alt="UPI QR Code" id="qr-code">
+
+        <p>Enter UPI Transaction ID:</p>
+        <input type="text" id="transaction-id">
+        <button id="confirm-payment">Confirm Payment</button>
+
+        <p id="timer">Time left: <span id="countdown">120</span> seconds</p>
+        <p id="payment-status"></p>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
 </section>
 </script>
 
