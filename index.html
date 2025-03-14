@@ -282,131 +282,49 @@ At Top Models of Kashmir, we believe that fashion and modeling are powerful form
 
 Whether you're a budding model, a fashion enthusiast, or simply someone who appreciates elegance and talent, we invite you to join our journey as we redefine the modeling scene in Kashmir, one inspiring story at a time.</p>
   </section>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TMO_K Services</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .platform, .services { display: none; margin-bottom: 20px; }
-        .category { cursor: pointer; margin: 10px 0; }
-        .show { display: block; }
-        label { display: block; margin: 5px 0; }
-        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #45a049; }
-        .qr-code { text-align: center; margin: 20px 0; }
-    </style>
-</head>
-<body>
+  <section id="tmo_k-service">
+    <h2>TMO_K Services</h2>
 
-    <section id="services">
-        <h2>TMO_K Services</h2>
+    <label>Select Category:</label>
+    <div class="categories">
+        <button onclick="showPlatforms('social')">Social Media</button>
+        <button onclick="showPlatforms('video')">Video Platforms</button>
+        <button onclick="showPlatforms('messaging')">Messaging Apps</button>
+    </div>
 
-        <!-- Username Input -->
-        <label>Username: <input type="text" id="username"></label>
+    <div id="platforms" class="hidden">
+        <h3>Select Platform:</h3>
+        <div id="platform-list"></div>
+    </div>
 
-        <!-- Category Selection -->
-        <div>
-            <div class="category" onclick="showPlatform('instagram')">Instagram</div>
-            <div class="category" onclick="showPlatform('youtube')">YouTube</div>
-            <div class="category" onclick="showPlatform('tiktok')">TikTok</div>
-            <div class="category" onclick="showPlatform('facebook')">Facebook</div>
-            <div class="category" onclick="showPlatform('telegram')">Telegram</div>
-        </div>
+    <div id="services" class="hidden">
+        <h3>Select Service:</h3>
+        <select id="service-type" onchange="updatePrice()">
+            <option value="followers">Followers</option>
+            <option value="likes">Likes</option>
+            <option value="comments">Comments</option>
+            <option value="views">Views</option>
+            <option value="story_views">Story Views</option>
+        </select>
 
-        <!-- Instagram Services -->
-        <div class="platform" id="instagram">
-            <h3>Instagram Services</h3>
-            <div class="services" id="instagram_services">
-                <label>Followers (1k/₹130): <input type="number" id="instagram_followers" onchange="calculatePrice()"></label>
-                <label>Likes (1k/₹15): <input type="number" id="instagram_likes" onchange="calculatePrice()"></label>
-                <label>Views (1k/₹3): <input type="number" id="instagram_views" onchange="calculatePrice()"></label>
-                <label>Comments (1k/₹149): <input type="number" id="instagram_comments" onchange="calculatePrice()"></label>
-                <label>Custom Comments (1k/₹199): <input type="number" id="instagram_custom_comments" onchange="calculatePrice()"></label>
-                <label>Story Views (1k/₹2): <input type="number" id="instagram_story_views" onchange="calculatePrice()"></label>
-            </div>
-        </div>
+        <label>Enter Quantity:</label>
+        <input type="number" id="quantity" min="100" step="100" placeholder="Enter quantity" oninput="updatePrice()">
 
-        <!-- YouTube Services -->
-        <div class="platform" id="youtube">
-            <h3>YouTube Services</h3>
-            <div class="services" id="youtube_services">
-                <label>Subscribers (1k/₹150): <input type="number" id="youtube_subscribers" onchange="calculatePrice()"></label>
-                <label>Views (1k/₹10): <input type="number" id="youtube_views" onchange="calculatePrice()"></label>
-            </div>
-        </div>
+        <p><strong>Total Price: ₹<span id="total-price">0</span></strong></p>
+    </div>
 
-        <!-- Other Platforms (similar structure as Instagram and YouTube) -->
-        <div class="platform" id="tiktok">
-            <h3>TikTok Services</h3>
-            <div class="services" id="tiktok_services">
-                <label>Followers (1k/₹140): <input type="number" id="tiktok_followers" onchange="calculatePrice()"></label>
-                <label>Likes (1k/₹25): <input type="number" id="tiktok_likes" onchange="calculatePrice()"></label>
-            </div>
-        </div>
+    <div id="payment-section" class="hidden">
+        <h3>Make Payment</h3>
+        <p>Send payment to <strong>tmo@upi</strong> or scan QR code:</p>
+        <img src="qr-code.png" alt="UPI QR Code" id="qr-code">
 
-        <!-- Real-Time Calculation -->
-        <h3>Total Price: ₹<span id="total_price">0</span></h3>
+        <label>Enter UPI Transaction ID:</label>
+        <input type="text" id="upi-transaction" placeholder="Transaction ID">
 
-        <!-- Payment Section -->
-        <section id="payment">
-            <h3>Payment Method</h3>
-            <p>Use the UPI ID: <strong>tmo-kashmir@jio</strong></p>
-            <div class="qr-code">
-                <img src="qrcode.png" alt="QR Code" style="max-width: 150px; width: 100%; height: auto;">
-            </div>
-            <label>Transaction ID: <input type="text" id="transaction_id"></label>
-            <button onclick="submitPayment()">Submit Payment</button>
-        </section>
-    </section>
-
-    <script>
-        function showPlatform(platform) {
-            // Hide all platforms
-            document.querySelectorAll('.platform').forEach(platformDiv => platformDiv.classList.remove('show'));
-            document.querySelectorAll('.services').forEach(serviceDiv => serviceDiv.classList.remove('show'));
-
-            // Show the selected platform and its services
-            document.getElementById(platform).classList.add('show');
-            document.getElementById(platform + '_services').classList.add('show');
-        }
-
-        function calculatePrice() {
-            let total = 0;
-
-            // Instagram prices
-            total += (document.getElementById("instagram_followers").value || 0) * 130;
-            total += (document.getElementById("instagram_likes").value || 0) * 15;
-            total += (document.getElementById("instagram_views").value || 0) * 3;
-            total += (document.getElementById("instagram_comments").value || 0) * 149;
-            total += (document.getElementById("instagram_custom_comments").value || 0) * 199;
-            total += (document.getElementById("instagram_story_views").value || 0) * 2;
-
-            // YouTube prices
-            total += (document.getElementById("youtube_subscribers").value || 0) * 150;
-            total += (document.getElementById("youtube_views").value || 0) * 10;
-
-            // TikTok prices
-            total += (document.getElementById("tiktok_followers").value || 0) * 140;
-            total += (document.getElementById("tiktok_likes").value || 0) * 25;
-
-            document.getElementById("total_price").textContent = total;
-        }
-
-        function submitPayment() {
-            let transactionID = document.getElementById("transaction_id").value;
-            if (transactionID) {
-                alert("Payment Successful! Redirecting...");
-                setTimeout(function() {
-                    window.location.href = "https://tmokashmir.github.io"; // Redirect after 5 seconds
-                }, 5000); // 5 seconds delay
-            } else {
-                alert("Please enter a valid Transaction ID.");
-            }
-        }
-    </script>
+        <button onclick="confirmPayment()">Submit Payment</button>
+    </div>
+  </section>
+</script>
 
 </body>
 </html>
