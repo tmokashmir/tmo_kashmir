@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     quantityInput.addEventListener("input", function () {
         const service = serviceSelect.value;
         const quantity = parseInt(quantityInput.value);
-        if (service && quantity >= 1000) {
+        if (service && quantity >= 100) {
             totalPrice.innerText = (prices[service] / 1000) * quantity;
             proceedPaymentBtn.style.display = "block";
         } else {
