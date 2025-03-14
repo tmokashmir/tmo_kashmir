@@ -285,16 +285,14 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
   <section id="tmo_k-service">
     <h2>TMO_K Services</h2>
 
-    <label>Select Category:</label>
+    <label>Select Platform:</label>
     <div class="categories">
-        <button onclick="showPlatforms('social')">Social Media</button>
-        <button onclick="showPlatforms('video')">Video Platforms</button>
-        <button onclick="showPlatforms('messaging')">Messaging Apps</button>
-    </div>
-
-    <div id="platforms" class="hidden">
-        <h3>Select Platform:</h3>
-        <div id="platform-list"></div>
+        <button onclick="showServices('instagram')">Instagram</button>
+        <button onclick="showServices('youtube')">YouTube</button>
+        <button onclick="showServices('tiktok')">TikTok</button>
+        <button onclick="showServices('telegram')">Telegram</button>
+        <button onclick="showServices('twitter')">Twitter</button>
+        <button onclick="showServices('facebook')">Facebook</button>
     </div>
 
     <div id="services" class="hidden">
@@ -308,20 +306,16 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
         </select>
 
         <label>Enter Quantity:</label>
-        <input type="number" id="quantity" min="100" step="100" placeholder="Enter quantity" oninput="updatePrice()">
+        <input type="number" id="quantity" min="1000" step="1000" placeholder="Enter quantity" oninput="updatePrice()">
 
         <p><strong>Total Price: ₹<span id="total-price">0</span></strong></p>
     </div>
 
     <div id="payment-section" class="hidden">
-        <h3>Make Payment</h3>
-        <p>Send payment to <strong>tmo-kashmir@jio</strong> or scan QR code:</p>
-        <img src="qrcode.png" alt="UPI QR Code" id="qr-code">
-
-        <label>Enter UPI Transaction ID:</label>
+        <h3>Enter Payment Details</h3>
+        <label>UPI Transaction ID:</label>
         <input type="text" id="upi-transaction" placeholder="Transaction ID">
-
-        <button onclick="confirmPayment()">Submit Payment</button>
+        <button onclick="submitOrder()">Submit Order</button>
     </div>
   </section>
 </script>
