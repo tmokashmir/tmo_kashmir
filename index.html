@@ -294,7 +294,7 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
 <body>
 
     <header>
-        <h1>Welcome to TMO_K Services</h1>
+        <h1>Buy TMO_K Services</h1>
     </header>
 
     <section id="service-selection">
@@ -317,6 +317,31 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
                 <option value="">-- Select --</option>
             </select>
         </div>
+      <div id="services-container" style="display: none;">
+    <label for="service">Select Service:</label>
+    <select id="service">
+        <option value="">-- Select --</option>
+    </select>
+
+    <!-- New Username/Link Input -->
+    <div id="username-container" style="display: none;">
+        <label for="username">Enter Username/Link:</label>
+        <input type="text" id="username" placeholder="Enter profile link or username" required>
+    </div>
+</div>
+
+<script>
+    // JavaScript to Show Username Input
+    document.getElementById("service").addEventListener("change", function () {
+        let usernameContainer = document.getElementById("username-container");
+        
+        if (this.value !== "") { 
+            usernameContainer.style.display = "block"; // Show input field when service is selected
+        } else {
+            usernameContainer.style.display = "none"; // Hide input if no service is selected
+        }
+    });
+</script>
 
         <div id="quantity-container" style="display: none;">
             <label for="quantity">Enter Quantity:</label>
