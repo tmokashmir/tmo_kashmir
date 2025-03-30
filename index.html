@@ -274,6 +274,65 @@
     </div>
   </section>
 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMO Kashmir - Eid Mubarak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8f9fa;
+        }
+        .eid-message {
+            display: none;
+            background: #ffcc00;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .eid-image {
+            display: none;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to TMO Kashmir</h1>
+
+    <!-- Eid Mubarak Message -->
+    <div id="eidMubarak" class="eid-message">
+        🎉 **Eid Mubarak from TMO Kashmir!** 🌙  
+        May this Eid bring joy, success, and endless blessings to you and your loved ones. ✨  
+    </div>
+
+    <!-- Eid Image -->
+    <img id="eidImage" class="eid-image" src="IMG-20250330-WA0002.jpg" alt="Eid Mubarak Image">
+
+    <script>
+        // Get today's date
+        let today = new Date();
+        let eidDates = ["2025-03-31", "2025-03-31"]; // Update with actual Eid dates
+
+        // Check if today is Eid
+        let todayFormatted = today.toISOString().split('T')[0];
+        if (eidDates.includes(todayFormatted)) {
+            document.getElementById("eidMubarak").style.display = "block";
+            document.getElementById("eidImage").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
   <section id="about">
     <h2>About Us</h2>
     <p>Welcome to Top Models of Kashmir, a platform dedicated to showcasing the exceptional talent, beauty, and culture of Kashmir. Our mission is to shine a spotlight on emerging and established models from the region, giving them a stage to express their individuality, creativity, and unique stories.
