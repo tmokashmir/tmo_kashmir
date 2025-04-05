@@ -226,32 +226,6 @@
   </style>
 </head>
 <body>
-.collapsible {
-  background-color: #f44336;
-  color: white;
-  cursor: pointer;
-  padding: 14px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 16px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-
-.active, .collapsible:hover {
-  background-color: #d32f2f;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f9f9f9;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
 <!-- Header with Logo and Navigation Toggle -->
 <header>
   <div class="logo">
@@ -510,18 +484,18 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
   }
 
   // Collapsible Sections
-var coll = document.getElementsByClassName("collapsible");
-for (var i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
+  var coll = document.getElementsByClassName("collapsible");
+  for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
   // Open Modal for Privacy Policy or Terms
   function openModal(type) {
     if (type === 'privacy') {
