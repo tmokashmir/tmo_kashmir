@@ -518,24 +518,23 @@ Whether you're a budding model, a fashion enthusiast, or simply someone who appr
   }, 10000);
 </script>
 <script>
-  // Collapse Toggle Script
+  // Collapse for all collapsible buttons
   document.addEventListener("DOMContentLoaded", function () {
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+    const collapsibles = document.querySelectorAll(".collapsible");
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
+    collapsibles.forEach(button => {
+      button.addEventListener("click", function () {
         this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
+        const content = this.nextElementSibling;
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
         } else {
-          content.style.display = "block";
+          content.style.maxHeight = content.scrollHeight + "px";
         }
       });
-    }
+    });
   });
 </script>
-
 </body>
 </html>
