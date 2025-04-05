@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>𝐓𝐨𝐩 𝐌𝐨𝐝𝐞𝐥𝐬 𝐎𝐟 𝐊𝐚𝐬𝐡𝐦𝐢𝐫</title>
+  <style>
+    /* Styles remain the same from your provided code */
+    /* ... */
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+    <span>𝐓𝐨𝐩 𝐌𝐨𝐝𝐞𝐥𝐬 𝐎𝐟 𝐊𝐚𝐬𝐡𝐦𝐢𝐫</span>
+  </div>
+  <span class="menu-toggle" onclick="toggleSidebar()">☰</span>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#collaborate">How to Collaborate</a>
+    <a href="#contact">Contact Us</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-PC-gEkZstwHbjFRg7Dq6JuwRptqqg7DaS-qaGyncqvZQYQ/viewform?usp=header" target="_blank">Feedback</a>
+    <a href="#faqs">FAQs</a>
+  </nav>
+</header>
+
+<div class="sidebar" id="sidebar">
+  <div class="close-btn" onclick="toggleSidebar()">✖</div>
+  <a href="#home">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#collaborate">How to Collaborate</a>
+  <a href="#contact">Contact Us</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-PC-gEkZstwHbjFRg7Dq6JuwRptqqg7DaS-qaGyncqvZQYQ/viewform?usp=header" target="_blank">Feedback</a>
+  <button class="collapsible">Privacy Policy</button>
+  <div class="content">
+    <p>We prioritize your privacy... (same content)</p>
+  </div>
+  <button class="collapsible">Terms & Conditions</button>
+  <div class="content">
+    <p>Welcome to TMO Kashmir... (same content)</p>
+  </div>
+</div>
+
+<div class="main-content">
+
+  <section id="home">
+    <h2>Home</h2>
+    <p>Connecting the best talents in Kashmir with the world.</p>
+    <div class="updates-section">
+      <div class="updates-text">
+        "Grow your Instagram account instantly with @TMO_KASHMIR! Real followers, likes, and views at the best prices. Don’t miss out!"
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Top Models of Kashmir... (same content)</p>
+  </section>
+
+  <section id="tmo_k-service">
+    <h2>Buy TMO_K Services</h2>
+
+    <label for="platform">Select Platform:</label>
+    <select id="platform">
+      <option value="">-- Select --</option>
+      <option value="instagram">Instagram</option>
+      <option value="youtube">YouTube</option>
+      <option value="tiktok">TikTok</option>
+      <option value="telegram">Telegram</option>
+      <option value="twitter">Twitter</option>
+      <option value="facebook">Facebook</option>
+    </select>
+
+    <div id="services-container" style="display: none;">
+      <label for="service">Select Service:</label>
+      <select id="service">
+        <option value="">-- Select --</option>
+        <option value="followers">Followers</option>
+        <option value="likes">Likes</option>
+        <option value="comments">Comments</option>
+        <option value="views">Views</option>
+      </select>
+
+      <div id="username-container" style="display: none;">
+        <label for="username">Enter Username/Link:</label>
+        <input type="text" id="username" placeholder="Enter your link or username" required>
+      </div>
+
+      <div id="quantity-container">
+        <label for="quantity">Enter Quantity:</label>
+        <input type="number" id="quantity" min="100" value="100">
+      </div>
+
+      <h3>Total Price: ₹<span id="total-price">0</span></h3>
+      <button id="proceed-payment">Proceed to Payment</button>
+    </div>
+
+    <section id="payment-section" style="display: none;">
+      <h2>Complete Payment</h2>
+      <p>Send payment to <b>tmo-kashmir@jio</b> or scan the QR code below:</p>
+      <img src="qrcode.png" alt="UPI QR Code" width="200">
+      <p>Enter UPI Transaction ID:</p>
+      <input type="text" id="transaction-id">
+      <button id="confirm-payment">Confirm Payment</button>
+      <p id="timer">Time left: <span id="countdown">120</span> seconds</p>
+      <p id="payment-status"></p>
+    </section>
+  </section>
+
+  <section id="collaborate">
+    <h2>How to Collaborate</h2>
+    <div class="video-section">
+      <video width="100%" controls>
+        <source src="InShot_20241226_181334988.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://getform.io/f/bqoodkdb" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="faqs">
+    <h2>FAQs</h2>
+    <!-- FAQs collapsibles remain the same -->
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 Top Models of Kashmir | Contact: flakzon@yahoo.com | Instagram: @tmo_kashmir</p>
+</footer>
+
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+  }
+
+  const collapsibles = document.querySelectorAll(".collapsible");
+  collapsibles.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const content = btn.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  document.getElementById("platform").addEventListener("change", () => {
+    const serviceSection = document.getElementById("services-container");
+    serviceSection.style.display = "block";
+  });
+
+  document.getElementById("service").addEventListener("change", function () {
+    document.getElementById("username-container").style.display = this.value ? "block" : "none";
+  });
+
+  document.getElementById("quantity").addEventListener("input", updatePrice);
+  document.getElementById("service").addEventListener("change", updatePrice);
+
+  function updatePrice() {
+    const service = document.getElementById("service").value;
+    const qty = parseInt(document.getElementById("quantity").value);
+    let price = 0;
+
+    if (service === "followers") price = 149;
+    else if (service === "likes") price = 19;
+    else if (service === "views") price = 29;
+    else if (service === "comments") price = 199;
+
+    document.getElementById("total-price").innerText = (price / 1000 * qty).toFixed(0);
+  }
+
+  document.getElementById("proceed-payment").addEventListener("click", () => {
+    document.getElementById("payment-section").style.display = "block";
+    let countdown = 120;
+    const interval = setInterval(() => {
+      countdown--;
+      document.getElementById("countdown").innerText = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        document.getElementById("payment-status").innerText = "Payment timed out.";
+      }
+    }, 1000);
+  });
+
+  document.getElementById("confirm-payment").addEventListener("click", () => {
+    const txn = document.getElementById("transaction-id").value;
+    if (txn) {
+      document.getElementById("payment-status").innerText = "Payment received. Your order is being processed!";
+    } else {
+      document.getElementById("payment-status").innerText = "Please enter a valid transaction ID.";
+    }
+  });
+</script>
+
+</body>
+</html>
